@@ -20,9 +20,10 @@ do
 		cd ${trial_loc}
 		#figure out how to run generators here
 		mv ../../../generators/* ./
-		gen.sh N D
+		./gen.sh ${N} ${D}
 		mv ./*.cpp ../../../*generators
 		mv ./*.sh ../../../generators
+		ls -a
 		mkdir testcases
 		mv ./*.in ./testcases
 		test_count=$(<test_count.txt)
@@ -33,7 +34,7 @@ do
 			to_run=${!alg}
 			mkdir ${to_run}
 			cd ${to_run}
-			g++ -std=c++20 -O2 ../../../prog/${to_run}.cpp -o ${to_run}
+			g++ -std=c++20 -O2 ../../../../prog/${to_run}.cpp -o ${to_run}
 			for ((i=1; i<=${test_count}; i++))
 			do
 				./${to_run} < ../testcases/${i}.in > ${i}.out
@@ -42,10 +43,11 @@ do
 			cd ..
 
 		done
-
+		cd ..
 	done
-
+	
 done
 
 
+cd ..
 cd ..
