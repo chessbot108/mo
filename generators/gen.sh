@@ -20,4 +20,6 @@ do
 done
 rm generic_rand
 
-echo "'expr $trial -1'" > test_count.txt
+trial=$((trial-1))
+
+echo "${trial}" > test_count.txt
