@@ -8,7 +8,7 @@ trial=1
 
 
 #generic rand
-generic_rand_trial_count=3
+generic_rand_trial_count=10
 generic_rand_trial=1
 g++ -std=c++20 -O2 generic_rand.cpp -o generic_rand
 while [ $generic_rand_trial -le $generic_rand_trial_count ]
