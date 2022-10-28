@@ -18,17 +18,26 @@ do
 		trial_loc=test_${N}_${D}
 		mkdir ${trial_loc}
 		cd ${trial_loc}
-		#figure out how to run generators here
+		
+
 		mv ../../../generators/* ./
 		./gen.sh ${N} ${D}
 		mv ./*.cpp ../../../*generators
 		mv ./*.sh ../../../generators
-		ls -a
+		
+		
 		mkdir testcases
 		mv ./*.in ./testcases
+		
 		test_count=$(<test_count.txt)
 		echo "test count is ${test_count}" 
 		rm test_count.txt
+
+
+		mkdir res
+		cp ../../judger.cpp ./judger.cpp
+		g++ -std=c++20 -O2 judger.cpp -o judger
+
 		for ((alg=6; alg<=$#; alg++))
 		do
 			to_run=${!alg}
@@ -39,10 +48,15 @@ do
 			do
 				./${to_run} < ../testcases/${i}.in > ${i}.out
 			done
+			
 			rm ${to_run}
-			cd ..
+
+			cd ..			
+			./judger ${to_run} ${test_count} > ./res/${to_run}.txt
+			
 
 		done
+
 		cd ..
 	done
 	
