@@ -17,6 +17,7 @@ int main(int argc, char *argv[]){
 
 	long long worst_case = 0, avg_case = 0;
 	long long avg_x = 0, avg_y = 0;
+	long long avg_dist_per_point = 0;
 	for(int tests = 1; tests <= test_count; tests++){
 		fstream input(("./testcases/" + to_string(tests) + ".in").c_str());
 		fstream answer(("./" + string(argv[1]) + "/" + to_string(tests) + ".out").c_str());
@@ -40,17 +41,24 @@ int main(int argc, char *argv[]){
 		avg_x += currentx;
 		avg_y += currenty;
 		avg_case += currentx + currenty;
+		avg_dist_per_point += (currentx + currenty)/N;
 		input.close();
 		answer.close();
 	}
 	avg_x /= test_count; //round down since decimals dont really matter at this scale
 	avg_y /= test_count;
 	avg_case /= test_count; 
+	avg_dist_per_point /= test_count;
 	//worst case
 	//avg case
 	//avg x
 	//avg y
-	cout << worst_case << "\n" << avg_case << "\n" << avg_x << "\n" << avg_y << "\n";
+	cout << worst_case << "\n";
+	cout << avg_case << "\n";
+	cout << avg_x << "\n";
+	cout << avg_y << "\n";
+	cout << avg_dist_per_point << "\n";
+
 	return 0;
 }
 
