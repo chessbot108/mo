@@ -73,6 +73,20 @@ done
 rm evenly_spaced
 
 
+odd_evenly_spaced_trial_count=2
+odd_evenly_spaced_trial=1
+g++ -std=c++20 -O2 odd_evenly_spaced.cpp -o odd_evenly_spaced
+while [ $odd_evenly_spaced_trial -le $odd_evenly_spaced_trial_count ]
+do
+	./odd_evenly_spaced $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use oddly evenly spaced as generator"
+	trial=$((trial+1))
+	odd_evenly_spaced_trial=$((odd_evenly_spaced_trial+1))
+done
+rm odd_evenly_spaced
+
+
+
 
 
 
