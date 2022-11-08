@@ -30,7 +30,7 @@ do
 	./hori_line $N $D $trial > ${trial}.in
 	echo "${trial} test printed. used hori line as generator"
 	trial=$((trial+1))
-	generic_rand_trial=$((hori_line_trial+1))
+	hori_line_trial=$((hori_line_trial+1))
 done
 rm hori_line
 
@@ -70,7 +70,7 @@ do
 	trial=$((trial+1))
 	evenly_spaced_trial=$((evenly_spaced_trial+1))
 done
-rm vevenly_spaced
+rm evenly_spaced
 
 
 
