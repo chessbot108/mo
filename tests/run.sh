@@ -44,7 +44,7 @@ do
             to_run=${!alg}
             mkdir ${to_run}
             cd ${to_run}
-            g++ -std=c++20 -O2 ../../../../prog/${to_run}.cpp -o ${to_run}
+            g++ -std=c++20 -O2 -Wl,-stack_size,0x20000000 ../../../../prog/${to_run}.cpp -o ${to_run}
             for ((i=1; i<=${test_count}; i++))
             do
                 ./${to_run} < ../testcases/${i}.in > ${i}.out
@@ -57,8 +57,8 @@ do
             rm ./${to_run}/*
             rmdir ./${to_run}
         done
-        rm ./testcases/*
-        rmdir testcases
+				rm ./testcases/*
+				rmdir testcases
         mv ./res/* ./
         rmdir res
         rm judger.cpp
