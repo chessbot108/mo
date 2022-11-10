@@ -66,7 +66,7 @@ g++ -std=c++20 -O2 ring.cpp -o ring
 while [ $ring_trial -le $ring_trial_count ]
 do
 	./ring $N $D $trial > ${trial}.in
-	echo "${trial} test printed. use oddly evenly spaced as generator"
+	echo "${trial} test printed. use ring as generator"
 	trial=$((trial+1))
 	ring_trial=$((ring_trial+1))
 done
@@ -104,7 +104,7 @@ g++ -std=c++20 -O2 anti_hilbert.cpp -o anti_hilbert
 while [ $anti_hilbert_trial -le $anti_hilbert_trial_count ]
 do
 	./anti_hilbert $N $D $trial > ${trial}.in
-	echo "${trial} test printed. use oddly evenly spaced as generator"
+	echo "${trial} test printed. use anti hilbert spaced as generator"
 	trial=$((trial+1))
 	anti_hilbert_trial=$((anti_hilbert_trial+1))
 done
