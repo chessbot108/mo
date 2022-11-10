@@ -38,6 +38,9 @@ int main(int argc, char *argv[]){
 			currenty += abs(points[p[i]].second - points[p[i-1]].second);
 		}
 		worst_case = max(worst_case, currentx + currenty);
+		avg_x += currentx;
+		avg_y += currenty;
+		avg_case += currentx + currenty;
 		worst_dist_per_point = max(worst_dist_per_point, (currentx + currenty)/N);
 		input.close();
 		answer.close();
@@ -50,6 +53,9 @@ int main(int argc, char *argv[]){
 	//avg x
 	//avg y
 	cout << worst_case << "\n";
+	cout << avg_case << "\n";
+	cout << avg_x << "\n";
+	cout << avg_y << "\n";
 	cout << worst_dist_per_point << "\n";
 
 	return 0;
