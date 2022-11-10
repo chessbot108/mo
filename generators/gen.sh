@@ -8,17 +8,17 @@ trial=1
 
 
 #generic rand
-#generic_rand_trial_count=6
-#generic_rand_trial=1
-#g++ -std=c++20 -O2 generic_rand.cpp -o generic_rand
-#while [ $generic_rand_trial -le $generic_rand_trial_count ]
-#do
-	#./generic_rand $N $D $trial > ${trial}.in
-	#echo "${trial} test printed. used generic_rand as generator"
-	#trial=$((trial+1))
-	#generic_rand_trial=$((generic_rand_trial+1))
-#done
-#rm generic_rand
+generic_rand_trial_count=6
+generic_rand_trial=1
+g++ -std=c++20 -O2 generic_rand.cpp -o generic_rand
+while [ $generic_rand_trial -le $generic_rand_trial_count ]
+do
+	./generic_rand $N $D $trial > ${trial}.in
+	echo "${trial} test printed. used generic_rand as generator"
+	trial=$((trial+1))
+	generic_rand_trial=$((generic_rand_trial+1))
+done
+rm generic_rand
 
 #lines
 
@@ -72,43 +72,43 @@ do
 done
 rm ring
 
-#evenly_spaced_trial_count=1
-#evenly_spaced_trial=1
-#g++ -std=c++20 -O2 evenly_spaced.cpp -o evenly_spaced
-#while [ $evenly_spaced_trial -le $evenly_spaced_trial_count ]
-#do
-	#./evenly_spaced $N $D $trial > ${trial}.in
-	#echo "${trial} test printed. use evenly spaced as generator"
-	#trial=$((trial+1))
-	#evenly_spaced_trial=$((evenly_spaced_trial+1))
-#done
-#rm evenly_spaced
+evenly_spaced_trial_count=1
+evenly_spaced_trial=1
+g++ -std=c++20 -O2 evenly_spaced.cpp -o evenly_spaced
+while [ $evenly_spaced_trial -le $evenly_spaced_trial_count ]
+do
+	./evenly_spaced $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use evenly spaced as generator"
+	trial=$((trial+1))
+	evenly_spaced_trial=$((evenly_spaced_trial+1))
+done
+rm evenly_spaced
 
 
-#odd_evenly_spaced_trial_count=1
-#odd_evenly_spaced_trial=1
-#g++ -std=c++20 -O2 odd_evenly_spaced.cpp -o odd_evenly_spaced
-#while [ $odd_evenly_spaced_trial -le $odd_evenly_spaced_trial_count ]
-#do
-	#./odd_evenly_spaced $N $D $trial > ${trial}.in
-	#echo "${trial} test printed. use oddly evenly spaced as generator"
-	#trial=$((trial+1))
-	#odd_evenly_spaced_trial=$((odd_evenly_spaced_trial+1))
-#done
-#rm odd_evenly_spaced
+odd_evenly_spaced_trial_count=1
+odd_evenly_spaced_trial=1
+g++ -std=c++20 -O2 odd_evenly_spaced.cpp -o odd_evenly_spaced
+while [ $odd_evenly_spaced_trial -le $odd_evenly_spaced_trial_count ]
+do
+	./odd_evenly_spaced $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use oddly evenly spaced as generator"
+	trial=$((trial+1))
+	odd_evenly_spaced_trial=$((odd_evenly_spaced_trial+1))
+done
+rm odd_evenly_spaced
 
 
-#anti_hilbert_trial_count=1
-#anti_hilbert_trial=1
-#g++ -std=c++20 -O2 anti_hilbert.cpp -o anti_hilbert
-#while [ $anti_hilbert_trial -le $anti_hilbert_trial_count ]
-#do
-	#./anti_hilbert $N $D $trial > ${trial}.in
-	#echo "${trial} test printed. use anti hilbert spaced as generator"
-	#trial=$((trial+1))
-	#anti_hilbert_trial=$((anti_hilbert_trial+1))
-#done
-#rm anti_hilbert
+anti_hilbert_trial_count=1
+anti_hilbert_trial=1
+g++ -std=c++20 -O2 anti_hilbert.cpp -o anti_hilbert
+while [ $anti_hilbert_trial -le $anti_hilbert_trial_count ]
+do
+	./anti_hilbert $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use anti hilbert spaced as generator"
+	trial=$((trial+1))
+	anti_hilbert_trial=$((anti_hilbert_trial+1))
+done
+rm anti_hilbert
 
 
 
