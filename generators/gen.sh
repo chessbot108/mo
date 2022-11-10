@@ -60,6 +60,18 @@ done
 rm diag_line
 
 
+ring_trial_count=1
+ring_trial=1
+g++ -std=c++20 -O2 ring.cpp -o ring
+while [ $ring_trial -le $ring_trial_count ]
+do
+	./ring $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use oddly evenly spaced as generator"
+	trial=$((trial+1))
+	ring_trial=$((ring_trial+1))
+done
+rm ring
+
 evenly_spaced_trial_count=2
 evenly_spaced_trial=1
 g++ -std=c++20 -O2 evenly_spaced.cpp -o evenly_spaced
@@ -84,6 +96,19 @@ do
 	odd_evenly_spaced_trial=$((odd_evenly_spaced_trial+1))
 done
 rm odd_evenly_spaced
+
+
+anti_hilbert_trial_count=1
+anti_hilbert_trial=1
+g++ -std=c++20 -O2 anti_hilbert.cpp -o anti_hilbert
+while [ $anti_hilbert_trial -le $anti_hilbert_trial_count ]
+do
+	./anti_hilbert $N $D $trial > ${trial}.in
+	echo "${trial} test printed. use oddly evenly spaced as generator"
+	trial=$((trial+1))
+	anti_hilbert_trial=$((anti_hilbert_trial+1))
+done
+rm anti_hilbert
 
 
 
