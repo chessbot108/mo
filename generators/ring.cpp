@@ -21,11 +21,11 @@ int main(int argc, char *argv[]){
 			cout << i << " " << D << "\n";
 			N--;
 		}
-		for(int i = D; i>=1 && N>0; i++){
+		for(int i = D; i>=1 && N>0; i--){
 			cout << D << " " << i << "\n";
 			N--;
 		}
-		for(int i = D; i>=1 && N>0; i++){
+		for(int i = D; i>=1 && N>0; i--){
 			cout << i << " " << 1 << "\n";
 			N--;
 		}	
