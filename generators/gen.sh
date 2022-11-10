@@ -8,7 +8,7 @@ trial=1
 
 
 #generic rand
-generic_rand_trial_count=5
+generic_rand_trial_count=6
 generic_rand_trial=1
 g++ -std=c++20 -O2 generic_rand.cpp -o generic_rand
 while [ $generic_rand_trial -le $generic_rand_trial_count ]
@@ -72,7 +72,7 @@ do
 done
 rm ring
 
-evenly_spaced_trial_count=2
+evenly_spaced_trial_count=1
 evenly_spaced_trial=1
 g++ -std=c++20 -O2 evenly_spaced.cpp -o evenly_spaced
 while [ $evenly_spaced_trial -le $evenly_spaced_trial_count ]
@@ -85,7 +85,7 @@ done
 rm evenly_spaced
 
 
-odd_evenly_spaced_trial_count=2
+odd_evenly_spaced_trial_count=1
 odd_evenly_spaced_trial=1
 g++ -std=c++20 -O2 odd_evenly_spaced.cpp -o odd_evenly_spaced
 while [ $odd_evenly_spaced_trial -le $odd_evenly_spaced_trial_count ]
