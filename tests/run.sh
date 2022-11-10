@@ -57,8 +57,8 @@ do
             rm ./${to_run}/*
             rmdir ./${to_run}
         done
-				rm ./testcases/*
-				rmdir testcases
+				#rm ./testcases/*
+				#rmdir testcases
         mv ./res/* ./
         rmdir res
         rm judger.cpp
