@@ -20,7 +20,9 @@ int main(){
 	}
 	vector<int> p(N);
 	iota(p.begin(), p.end(), 0);
-	sort(p.begin(), p.end()); //sort by x and then by y
+	sort(p.begin(), p.end(), [&](int i, int j){
+		return points[i] < points[j];
+			}); //sort by x and then by y
 	for(int x : p){
 		cout << x << " ";
 	}
