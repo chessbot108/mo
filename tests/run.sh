@@ -54,11 +54,11 @@ do
 
             cd ..            
             ./judger ${to_run} ${test_count} > ./res/${to_run}.txt
-            rm ./${to_run}/*
-            rmdir ./${to_run}
+            #rm ./${to_run}/*
+						#rmdir ./${to_run}
         done
-				rm ./testcases/*
-				rmdir testcases
+				#rm ./testcases/*
+				#rmdir testcases
         mv ./res/* ./
         rmdir res
         rm judger.cpp
