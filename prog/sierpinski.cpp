@@ -54,7 +54,7 @@ int n, D;
 	for(int i = 0; i<n; i++){
 		int x, y;
 		cin >> x >> y;
-		order.push_back(pair(sierpinski((lb)x/(lb)D, (lb)y/(lb)D), i));
+		order.push_back(pair(sierpinski((lb)(x-1)/(lb)D, (lb)(y-1)/(lb)D), i));
 	}
 	sort(all(order));
 	for(int i = 0; i<n; i++){

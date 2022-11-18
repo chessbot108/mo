@@ -43,7 +43,7 @@ int main(){
 	for(int i = 0; i<n; i++){
 		int x, y;
 		cin >> x >> y;
-		order.push_back(pair(hilbertOrder(x, y), i));
+		order.push_back(pair(hilbertOrder(x-1, y-1), i));
 	}
 	sort(order.begin(), order.end());
 	for(int i = 0; i<n; i++){
