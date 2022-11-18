@@ -6,6 +6,8 @@ global_loc=$1
 mkdir ${global_loc}
 cd ${global_loc}
 
+
+
 D_max=$2
 D_inc=$3
 N_max=$4
@@ -54,11 +56,11 @@ do
 
             cd ..            
             ./judger ${to_run} ${test_count} > ./res/${to_run}.txt
-            #rm ./${to_run}/*
-            #rmdir ./${to_run}
+						rm ./${to_run}/*
+						rmdir ./${to_run}
         done
-				#rm ./testcases/*
-				#rmdir testcases
+				rm ./testcases/*
+				rmdir testcases
         mv ./res/* ./
         rmdir res
         rm judger.cpp
@@ -69,5 +71,18 @@ do
 done
 
 
+#pwd
+
+for ((alg=6; alg<=$#; alg++))
+do
+	mv ../conv_csv.cpp ./conv_csv.cpp
+	to_run=${!alg}
+	touch ./${to_run}.txt
+
+	g++ -std=c++20 -o conv_csv ./conv_csv.cpp && ./conv_csv ${to_run} ${D_max} ${D_inc} ${N_max} ${N_inc}
+	rm conv_csv
+	mv ./conv_csv.cpp ../conv_csv.cpp
+done
+
 cd ..
-cd ..
+

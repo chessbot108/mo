@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
 	//avg case
 	//avg x
 	//avg y
-	cout << worst_case << "\n";
+	//cout << worst_case << "\n";
 	cout << worst_dist_per_point << "\n";
 
 	return 0;
