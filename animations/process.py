@@ -26,8 +26,8 @@ class tspAnimation(Scene):
                 slide(p, np)
                 p = np
         
-        input_file = "small_rng_3"
-        alg_name = "classic_with_parity"
+        input_file = "8x8"
+        alg_name = "hilbert8x8"
         underlying = "empty"
         # input_file = input()
         # alg_name = input()
@@ -86,7 +86,7 @@ class tspAnimation(Scene):
         self.wait(duration=1.0)
         print("dense?")
         # isd = input().strip()
-        isd = "N"
+        isd = "Y"
         def arrow_tour():
 
             for idx, v in enumerate(perm):
